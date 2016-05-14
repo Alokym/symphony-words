@@ -1,0 +1,5 @@
+@import "~foundation-sites/scss/foundation";
+@include foundation-global-styles;
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
