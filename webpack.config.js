@@ -10,11 +10,12 @@ var path = require('path');
 var buildPath = path.resolve(__dirname, './build');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/entry.js',
 
   output: {
     path: buildPath,
-    filename: "scripts/app.bundle.js"
+    filename: "scripts/app.bundle.js",
+    publicPath: '/'
   },
 
   module: {

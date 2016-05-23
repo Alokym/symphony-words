@@ -2,13 +2,9 @@
  * Created by vst on 5/14/2016.
  */
 
-import './app.scss';
+const App = (props) =>
+  <div id="app-wrapper">
+    <article id="page-container">{props.children}</article>
+  </div>;
 
-const HelloWorld = (props) =>
-  <h1>
-    Hello, {props.name}! {' '}
-    <i className="fa fa-fort-awesome"/>
-  </h1>;
-
-ReactDOM.render(<HelloWorld name="World" />,
-  document.getElementById('viewport'));
+export default App;
