@@ -2,7 +2,7 @@
  * Created by VStukanov on 5/20/16.
  */
 
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, Redirect, browserHistory, IndexRoute } from 'react-router';
 import App from './app.js';
 
 import Home from './pages/home';
@@ -17,6 +17,7 @@ const AppRouter = () =>
         <Router path="create" component={Create}/>
         <Router path="find" component={Find}/>
         <Router path="learn/:vocabularyId" component={Learn}/>
+        <Redirect from="*" to="/" />
       </Route>
   </Router>;
 
