@@ -6,15 +6,19 @@
 
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 var path = require('path');
 var buildPath = path.resolve(__dirname, './build');
 
 module.exports = {
-  entry: './src/entry.js',
+  entry: {
+    app: './src/entry.js'
+  },
 
   output: {
     path: buildPath,
-    filename: "scripts/app.bundle.js",
+    filename: "scripts/[name].bundle.js",
     publicPath: '/'
   },
 
@@ -31,7 +35,7 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!resolve-url!sass?sourceMap')
       },
 
       {
@@ -53,8 +57,9 @@ module.exports = {
     new webpack.ProvidePlugin({
       React: 'react',
       ReactDOM: 'react-dom',
-      _: 'lodash'
-    })
+      _: 'underscore'
+    }),
+    new ExtractTextPlugin('styles/[name].css')
   ],
 
   devServer: {

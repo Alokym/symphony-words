@@ -4,7 +4,12 @@
 
 ```sh
 $ npm install
-$ npm run build:and:serve
+```
+
+### Serve statics and watch
+
+```sh
+$ npm start
 ```
 
 ### API docs
