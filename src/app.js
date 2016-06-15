@@ -4,7 +4,7 @@
 
 const App = (props) =>
   <div id="app-wrapper">
-    <article id="page-container">{props.children}</article>
+    <article id="page-container" className="row">{props.children}</article>
   </div>;
 
 export default App;
